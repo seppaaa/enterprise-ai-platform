@@ -1,0 +1,7 @@
+2026-05-12 10:15:21 INFO PaymentService - Starting payment authorization for transactionId=TXN12345
+2026-05-12 10:15:22 ERROR PaymentService - Kafka timeout while publishing transaction event
+org.apache.kafka.common.errors.TimeoutException: Topic payment-events not available within 30000 ms
+    at org.apache.kafka.clients.producer.KafkaProducer.doSend(KafkaProducer.java:1008)
+    at com.example.payment.service.PaymentEventPublisher.publish(PaymentEventPublisher.java:42)
+2026-05-12 10:15:23 WARN PaymentService - Retrying event publish for transactionId=TXN12345
+2026-05-12 10:15:55 ERROR PaymentService - Failed after 3 retries for transactionId=TXN12345

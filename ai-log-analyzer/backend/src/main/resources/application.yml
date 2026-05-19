@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: ai-log-analyzer
+  datasource:
+    url: jdbc:h2:mem:ailoganalyzerdb
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+
+server:
+  port: 8080
+
+ai:
+  provider: mock # mock or openai
+  openai:
+    api-key: ${OPENAI_API_KEY:}
+    model: gpt-4o-mini
+    url: https://api.openai.com/v1/chat/completions
